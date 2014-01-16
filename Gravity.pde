@@ -1,5 +1,5 @@
-Gravobject[] objs = new Gravobject[100];
-float invgravpow = 2;
+Gravobject[] objs = new Gravobject[500];
+float invgravpow =2;
 float inset = 5;
 void setup()
 {
@@ -8,7 +8,7 @@ void setup()
   noStroke();
   for (int i =0; i <objs.length; i++)
   {
-    objs[i] = new Gravobject(new PVector(random(inset,width-inset),random(inset,height-inset)),PVector.random2D(),50);
+    objs[i] = new Gravobject(new PVector(random(inset,width-inset),random(inset,height-inset)),PVector.random2D(),10);
   }
 }
 void draw()

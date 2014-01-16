@@ -22,6 +22,9 @@ class Gravobject
   void move()
   {
     p.add(v);
+//    PVector ex = new PVector(p.x-width/2,p.y-height/2);
+//    ex.mult(0.00001);
+//    p.add(ex);
   }
   void display()
   {
@@ -32,23 +35,29 @@ class Gravobject
   {
     if (dist(p.x,p.y,g.p.x,g.p.y)<=d)
     {
-      if(p.x<g.p.x)
-      {
-        v.x = -abs(v.x);
-      }
-      if(p.x>g.p.x)
-      {
-        v.x = abs(v.x);
-      }
-      if(p.y<g.p.y)
-      {
-        v.y = -abs(v.y);
-      }
-      if(p.y>g.p.y)
-      {
-        v.y = abs(v.y);
-      }
-      v.mult(.85);
+//      if(p.x<g.p.x)
+//      {
+//        v.x = -abs(v.x);
+//      }
+//      if(p.x>g.p.x)
+//      {
+//        v.x = abs(v.x);
+//      }
+//      if(p.y<g.p.y)
+//      {
+//        v.y = -abs(v.y);
+//      }
+//      if(p.y>g.p.y)
+//      {
+//        v.y = abs(v.y);
+//      }
+      PVector i =new PVector(g.p.x-p.x,g.p.y-p.y);
+      float ang = PVector.angleBetween(i,v);
+      float iang = atan(i.y/i.x);
+      ang = iang - ang;
+      float vmag = v.mag();
+      v= new PVector(vmag*cos(ang),vmag*sin(ang));
+      v.mult(-.85);
     }
   }
 }
