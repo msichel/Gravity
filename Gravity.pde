@@ -1,4 +1,4 @@
-Gravobject[] objs = new Gravobject[500];
+Gravobject[] objs = new Gravobject[100];
 float invgravpow =2;
 float inset = 5;
 void setup()
